@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8" />
+  <title>ラーメン店マップ</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="ra-mens.js" defer></script>
+</head>
+
+<body>
+  <div id="initial-loading">読み込み中...</div>
+  <header>
+    <img src="./images/Men-search-logo.png" alt="ロゴ" id="logo" style="height: 50px; margin: 1% 2%;">
+    <input type="number" id="rangeInput" class="filter" min="0.1" step="0.1" placeholder="範囲(km)"/>
+
+    <input type="text" id="storeNameInput" class="filter" placeholder="キーワード">
+    <div id="search">
+      <button id="searchBtn">ラーメン店を検索</button>
+    </div>
+  </header>
+
+
+
+  <div id="store-list" class="store-list" style="display: none;">
+    <div class="sort-ui">
+      <label for="sort">並び変え</label>
+      <select name="sort" id="sort">
+        <option value="1" selected>距離順</option>
+        <option value="2">評価順</option>
+        <option value="3">口コミ順</option>
+      </select>
+    </div>
+
+    <!-- 店舗リストを表示するコンテナを別に用意 -->
+    <div id="store-cards-container"></div>
+  </div>
+  <div id="map-wrapper">
+    <div id="map"></div>
+    <div id="search-loading">検索中...</div>
+  </div>
+</body>
+</html>
